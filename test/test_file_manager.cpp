@@ -3,7 +3,20 @@
 
 int main() {
     FileManager fm;
-    //Тест 1. Чтение файла
+
+    // 1. writeFile test
+    bool written = fm.writeFile("test_write.txt", "Hello from writeFile!");
+    std::cout << "writeFile: " << (written ? "OK" : "FAIL") << std::endl;
+
+    // 2. readFile test
     std::string content = fm.readFile("text.txt");
-    std::cout << "Read content: " << content << std::endl;
+    std::cout << "readFile: " << content << std::endl;
+
+    // 3. listFiles test
+    std::cout << "Files in current dir:" << std::endl;
+    for (const auto& f : fm.listFiles(".")) {
+        std::cout << " - " << f << std::endl;
+    }
+
+    return 0;
 }

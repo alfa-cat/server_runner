@@ -1,4 +1,5 @@
-#vscode files
+# ignore files
 .vscode/
 text.txt
 test_runner
+test_write.txt
